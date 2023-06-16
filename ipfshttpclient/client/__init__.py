@@ -21,27 +21,29 @@ DEFAULT_PASSWORD: ty.Optional[str] = os.getenv('PY_IPFS_HTTP_CLIENT_DEFAULT_PASS
 # for it to be considered compatible.
 VERSION_MINIMUM   = "0.5.0"
 VERSION_BLACKLIST = []
-VERSION_MAXIMUM   = "0.9.0"
-
-from . import base
-from . import bitswap
-from . import block
-from . import bootstrap
-from . import config
-from . import dag
-from . import dht
-from . import files
-from . import key
-from . import miscellaneous
-from . import name
-from . import object
-from . import pin
-from . import repo
-#TODO: `from . import stats`
-from . import swarm
-from . import unstable
+VERSION_MAXIMUM   = "0.21.0"
 
 from .. import encoding, exceptions, http, multipart, utils
+
+#TODO: `from . import stats`
+from . import (
+    base,
+    bitswap,
+    block,
+    bootstrap,
+    config,
+    dag,
+    dht,
+    files,
+    key,
+    miscellaneous,
+    name,
+    object,
+    pin,
+    repo,
+    swarm,
+    unstable,
+)
 
 
 def assert_version(version: str, minimum: str = VERSION_MINIMUM,
